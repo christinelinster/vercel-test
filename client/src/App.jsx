@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => { 
       try {
-        const response = await fetch("/api/home", {
+        const response = await fetch("https://server-pink-chi-86.vercel.app/api/home", {
           method: "GET",
           headers: {
               "Content-Type": "application/json",

@@ -1,13 +1,17 @@
 import express from 'express'; 
+import dotenv from 'dotenv';
+import cors from 'cors'; 
 
 const app = express();
-const port = 3000; 
+const port = process.env.PORT || 3000; 
 
-app.use(express.json())
+dotenv.config();
+
+app.use(cors());
+app.use(express.json());
 
 app.get("/api/home", (req,res) => {
-    const message = "This is christine";
-    res.json({message:message})
+    res.json({message: "hi, im christine"})
 })
 
 app.listen(port, () => {
